@@ -2,7 +2,7 @@
 
 
 [RequireComponent(typeof(LineRenderer))]
-public class RayController: MonoBehaviour {
+public class RayController: Singleton<RayController> {
 
 
     Ray ray;//射线类实例

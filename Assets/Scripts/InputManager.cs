@@ -17,13 +17,27 @@ public class InputManager: MonoBehaviour {
             if (Input.GetMouseButtonDown(0))
             {
                 Player.Instance.currentWeapon.Fire();
-                print("1111");
+                Player.Instance.DetectionFire();
             }
         }
         else
         {
             if (Input.GetMouseButton(0))
+            {
                 Player.Instance.currentWeapon.Fire();
+                Player.Instance.DetectionFire();
+            }
+        }
+        //更换弹夹
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Player.Instance.currentWeapon.Reload();
+        }
+
+        //更换发射模式
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            Player.Instance.currentWeapon.ChangeFireMode();
         }
     }
 }
